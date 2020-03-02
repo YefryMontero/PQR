@@ -27,7 +27,7 @@ INSERT INTO `menu` (`id`, `menu_id`, `nombre`, `url`, `orden`, `icono`, `created
 (4, 1, 'Permiso', 'admin/permiso', 4, 'fa-list-alt', '2019-11-29 19:19:47', '2019-11-29 19:28:14'),
 (5, 1, 'Permiso Rol', 'admin/permiso-rol', 5, 'fa-exchange', '2019-11-29 19:22:43', '2019-11-29 19:28:14'),
 (6, 1, 'Roles', 'admin/rol', 6, 'fa-briefcase', '2019-11-29 19:24:45', '2019-11-29 19:28:14'),
-(7, 1, 'Usuario', 'admin/usuario', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44'),
+(7, 1, 'Usuario', 'admin/usuario', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
 
 
 CREATE TABLE `menu_rol` (
@@ -44,7 +44,7 @@ INSERT INTO `menu_rol` (`rol_id`, `menu_id`) VALUES
 (1, 3),
 (1, 4),
 (1, 5),
-(1, 6),
+(1, 6);
 
 
 
@@ -113,7 +113,7 @@ INSERT INTO `rol` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'Administrador', '2019-11-30 01:46:17', NULL),
 (2, 'Secreataria', '2019-11-30 01:46:17', NULL),
 (3, 'Empleado', '2019-11-30 01:46:17', NULL),
-(4, 'Cliente', '2019-11-30 01:46:17', NULL);;
+(4, 'Cliente', '2019-11-30 01:46:17', NULL);
 
 
 
