@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
+    public $maxAttempts = 3;
+public $decayMinutes = 20;
     protected $redirectTo = '/';
 
     public function __construct()
