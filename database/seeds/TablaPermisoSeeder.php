@@ -9,23 +9,23 @@ class TablaPermisoSeeder extends Seeder
     {
         // factory(Permiso::class)->times(50)->create();
         DB::table('permiso')->insert([
-            'nombre' => 'Prestar libros',
-            'slug' => 'prestar-libros',
+            'nombre' => 'Realizar PQR',
+            'slug' => 'realizar-pqr',
         ]);
 
         DB::table('permiso')->insert([
-            'nombre' => 'Crear libros',
-            'slug' => 'crear-libros',
+            'nombre' => 'Actualizar PQR',
+            'slug' => 'Actualizar-pqr',
         ]);
 
         DB::table('permiso')->insert([
-            'nombre' => 'Editar libros',
-            'slug' => 'editar-libros',
+            'nombre' => 'Eliminar PQR',
+            'slug' => 'eliminar-pqr',
         ]);
 
         DB::table('permiso')->insert([
-            'nombre' => 'Listar libros',
-            'slug' => 'listar-libros',
+            'nombre' => 'Listar PQR',
+            'slug' => 'listar-pqr',
         ]);
 
 

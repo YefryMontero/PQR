@@ -9,9 +9,9 @@ class UsuarioAdministradorSeeder extends Seeder
     public function run()
     {
         DB::table('usuario')->insert([
-            'usuario' => 'admin',
-            'nombre' => 'Administrador',
-            'email' => 'prueban@gmail.com',
+            'usuario' => 'YeMontero',
+            'nombre' => 'Yefry Montero',
+            'email' => 'yefry.montero@correounivalle.edu.co',
             'password' => bcrypt('pass123')
         ]);
 
@@ -19,6 +19,7 @@ class UsuarioAdministradorSeeder extends Seeder
             'rol_id' => 1,
             'usuario_id' => 1
         ]);
+       
 
     }
 }

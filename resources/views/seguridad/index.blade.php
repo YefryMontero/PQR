@@ -15,14 +15,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/AdminLTE.min.css")}}">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js does not work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
@@ -31,7 +23,6 @@
         <div class="login-logo">
             <a href="{{route('inicio')}}">Sistema PQR </a>
         </div>
-        <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Inicio su session</p>
             @if ($errors->any())
@@ -56,20 +47,15 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-8"></div>
-                    <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
         </div>
-        <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box -->
 
     <script src="{{asset("assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
-    <!-- Bootstrap 3.3.7 -->
     <script src="{{asset("assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
 </body>
 
