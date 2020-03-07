@@ -26,6 +26,7 @@ class UsuarioController extends Controller
 
     public function guardar(ValidacionUsuario $request)
     {
+   
         $usuario = Usuario::create($request->all());
         $usuario->roles()->sync($request->rol_id);
         return redirect('admin/usuario')->with('mensaje', 'Usuario creado con exito');

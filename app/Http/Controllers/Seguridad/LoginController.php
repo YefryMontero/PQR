@@ -10,8 +10,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-
     protected $redirectTo = '/';
+    private $maxAttempts = 3;
+    private $decayMinutes = 20;
 
     public function __construct()
     {
@@ -25,6 +26,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
+    
         $roles = $user->roles()->get();
         if ($roles->isNotEmpty()) {
             $user->setSession($roles->toArray());
@@ -34,7 +36,6 @@ class LoginController extends Controller
             return redirect('seguridad/login')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
         }
     }
-
     public function username()
     {
         return 'usuario';

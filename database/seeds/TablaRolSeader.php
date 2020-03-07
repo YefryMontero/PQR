@@ -8,7 +8,7 @@ class TablaRolSeeder extends Seeder
     public function run()
     {
         $rols = [
-            'administrador',
+            'Administrador',
             'Empleado',
             'Cliente',
             'Secretaria'
