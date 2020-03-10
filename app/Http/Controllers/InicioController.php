@@ -8,7 +8,7 @@ class InicioController extends Controller
 {
     public function index()
     {
-        return view('admin.admin.index');
+        return view('inicio');
     }
 
     public function create()
