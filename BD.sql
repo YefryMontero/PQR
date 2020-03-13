@@ -28,6 +28,11 @@ INSERT INTO `menu` (`id`, `menu_id`, `nombre`, `url`, `orden`, `icono`, `created
 (5, 1, 'Permiso Rol', 'admin/permiso-rol', 5, 'fa-exchange', '2019-11-29 19:22:43', '2019-11-29 19:28:14'),
 (6, 1, 'Roles', 'admin/rol', 6, 'fa-briefcase', '2019-11-29 19:24:45', '2019-11-29 19:28:14'),
 (7, 1, 'Usuario', 'admin/usuario', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
+(8, 0, 'Pqrs', 'pqrs/pqrs', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
+(9, 8, 'Peticiones', 'pqrs/peticones', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
+(10, 8,'Quejas', 'pqrs/quejas', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
+(11, 8,'Reclamos', 'pqrs/reclamos', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
+(12, 8,'Sugerencia', 'pqrs/sugerencia', 1, 'fa-users', '2019-11-29 19:26:50', '2019-11-30 03:36:44');
 
 
 CREATE TABLE `menu_rol` (
@@ -39,13 +44,12 @@ CREATE TABLE `menu_rol` (
 
 INSERT INTO `menu_rol` (`rol_id`, `menu_id`) VALUES
 (1, 1),
-(1, 7),
 (1, 2),
 (1, 3),
 (1, 4),
 (1, 5),
-(1, 6);
-
+(1, 6),
+(1, 7);
 
 
 CREATE TABLE `migrations` (

@@ -8,11 +8,17 @@ use App\Models\Seguridad\Usuario;
 use App\Models\Admin\Rol;
 use App\Http\Requests\ValidacionUsuario;
 
+
+/* Yefry Alejandro
+    3-feb-2020 
+    ESta clase nos permite hacer gestion de los usuarios */
+
 class UsuarioController extends Controller
 {
 
+        //Obtiene los datos los datos y los manda a la vista con COMPACT 
     public function index()
-    {
+    {  
         $datas = Usuario::with('roles:id,nombre')->orderBy('id')->get();
         return view('admin.usuario.index', compact('datas'));
     }
