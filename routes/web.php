@@ -5,7 +5,6 @@ Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
 Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
 Route::get('seguridad/logout', 'Seguridad\LoginController@logout')->name('logout');
 Route::post('ajax-sesion', 'AjaxController@setSession')->name('ajax')->middleware('auth');
-
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'superadmin']], function () {
     Route::get('', 'AdminController@index');
     /*RUTAS DE USUARIO*/
@@ -43,5 +42,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     /*RUTAS PERMISO_ROL*/
     Route::get('permiso-rol', 'PermisoRolController@index')->name('permiso_rol');
     Route::post('permiso-rol', 'PermisoRolController@guardar')->name('guardar_permiso_rol');
+     Route::get('pqrs', 'PqrsController@index')->name('pqrs');
+     Route::get('pqrs/crear', 'PqrsController@crear')->name('crear_pqrs');
+     Route::post('pqrs', 'PqrsController@guardar')->name('guardar_pqrs');
 });
-
+Route::get('pqrs/inconformidad', 'InconformidadController@index')->name('inconformidad');
+Route::get('pqrs/inconformidad/crear', 'InconformidadController@crear')->name('crear_inconformidad');
+Route::post('pqrs/inconformidad', 'InconformidadController@guardar')->name('guardar_inconformidad');
+Route::get('pqrs/respuesta', 'RespuestaController@index')->name('responder_pqrs');

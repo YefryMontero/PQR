@@ -13,7 +13,7 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{asset("assets/$theme/dist/img/iconoUsuario.jpg")}}" class="user-image" alt="User Image">
+            <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="user-image" alt="User Image">
             <span class="hidden-xs">Hola, {{session()->get('nombre_usuario') ?? 'Aun no inicias sesion'}}</span>
           </a>
           <ul class="dropdown-menu">
@@ -31,10 +31,10 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="{{route('login')}}" class="btn btn-primary btn-flat">Login</a>
+                <a href="{{route('login')}}" class="btn btn-danger btn-flat">Login</a>
               </div>
               <div class="pull-right">
-                <a href="{{route('logout')}}" class="btn btn-danger btn-flat">Salir</a>
+                <a href="{{route('logout')}}" class="btn btn-info btn-flat">Salir</a>
               </div>
             </li>
           </ul>

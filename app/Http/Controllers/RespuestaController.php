@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\pqrs;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class peticionesController extends Controller
+class RespuestaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class peticionesController extends Controller
      */
     public function index()
     {
-        return view('pqrs.peticines.index');
+        
+        return view('pqrs.respuesta.index');
     }
 
     /**

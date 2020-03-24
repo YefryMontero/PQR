@@ -148,7 +148,7 @@ trait AuthenticatesUsers
     }
 
     /**
-     * Esta funcion es cuando el ususario sale de sesion.
+     * Log the user out of the application.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

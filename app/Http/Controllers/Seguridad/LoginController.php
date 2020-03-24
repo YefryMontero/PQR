@@ -17,8 +17,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    } 
-    // Este metodo me lleva la vista del login
+    }
+
     public function index()
     {
         return view('seguridad.index');

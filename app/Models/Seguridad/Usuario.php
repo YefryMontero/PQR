@@ -4,6 +4,9 @@ namespace App\Models\Seguridad;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Admin\Rol;
+use App\Models\Admin\pqrs;
+
+use App\Models\inconformidad;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,8 +19,8 @@ class Usuario extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Rol::class, 'usuario_rol');
-    }
-
+    }    
+     
     public function setSession($roles)
     {
         Session::put([
