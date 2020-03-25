@@ -1,5 +1,7 @@
 <?php
 
+
+
 Route::get('/', 'InicioController@index')->name('inicio');
 Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
 Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
@@ -49,4 +51,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 Route::get('pqrs/inconformidad', 'InconformidadController@index')->name('inconformidad');
 Route::get('pqrs/inconformidad/crear', 'InconformidadController@crear')->name('crear_inconformidad');
 Route::post('pqrs/inconformidad', 'InconformidadController@guardar')->name('guardar_inconformidad');
-Route::get('pqrs/respuesta', 'RespuestaController@index')->name('responder_pqrs');
+Route::get('pqrs/{id}/editar', 'InconformidadController@edit')->name('actualizar_inconformidad'); 
+Route::get('pqrs/respuesta/{id}', 'RespuestaController@show')->name('responder_pqrs');
+Route::post('pqrs/respuesta/{id}', 'RespuestaController@store')->name('guardar_respuesta');  

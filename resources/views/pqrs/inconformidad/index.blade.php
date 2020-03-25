@@ -39,18 +39,11 @@
                                 <td>{{$inconformidad->descripcion}}</td> <td>{{$inconformidad->estado}}</td>
                                 
                                 <td>
-                                     <a href="{{route('responder_pqrs')}}" cclass="btn-accion-tabla tooltipsC" title="Respuesta de esta pqrs">
+                                     <a href="{{route('responder_pqrs', $inconformidad)}}" class="ver_respuesta"  title="Respuesta de esta pqrs">
                                      <i class="fa fa-envelope-o"></i>
-                                     <span class="label label-success">4</span>
-                                    </a>
-                                    <a href="" class="btn-accion-tabla tooltipsC" title="Editar este registro">
+                                    <a href="{{route('actualizar_inconformidad', $inconformidad)}}" class="btn-accion-tabla tooltipsC" title="Editar este registro">
                                         <i class="fa fa-edit"></i>
                                     </a>
-
-                                    <form action="" class="d-inline form-eliminar" method="POST">
-                                        @csrf @method("delete")
-                                        <button type="submit" class="btn-accion-tabla eliminar tooltipsC" title="Eliminar este registro"><i class="fa fa-times-circle text-danger"></i></button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach

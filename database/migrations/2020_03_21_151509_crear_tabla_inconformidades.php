@@ -20,7 +20,7 @@ class CrearTablaInconformidades extends Migration
             $table->foreign('usuario_id', 'fk_inconformidad_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedInteger('pqrs_id');
             $table->foreign('pqrs_id', 'fk_inconformidad_pqrs')->references('id')->on('pqrs')->onDelete('restrict')->onUpdate('restrict');
-            $table->string('descripcion', 150);
+            $table->string('descripcion', 250);
             $table->string('estado',10)->default('Activo');
             $table->timestamps();
         });

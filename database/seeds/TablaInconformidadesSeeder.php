@@ -13,19 +13,43 @@ class TablaInconformidadesSeeder extends Seeder
     {
         DB::table('inconformidades')->insert([
                 'motivo' => 'Falta cargero',
-                'usuario_id' => 1,
+                'usuario_id' => 2,
                 'pqrs_id' => 1,
                 'descripcion' => 'Creo que los cajeros no son suficientes',
                 'estado' => 'Activo',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ]);    
+            ]);  
+
      DB::table('inconformidades')->insert([
-                'motivo' => 'Daño de maquina',
-                'usuario_id' => 1,
+                'motivo' => 'Falta mercancia',
+                'usuario_id' => 2,
                 'pqrs_id' => 1,
-                'descripcion' => 'Por favor arreglar la maquina enfriadora de gaseosas',
+                'descripcion' => 'No surten lus estantes',
                 'estado' => 'Activo',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]);  
+        DB::table('inconformidades')->insert([
+                'motivo' => 'Falta mercancia',
+                'usuario_id' => 3,
+                'pqrs_id' => 1,
+                'descripcion' => 'No surten lus estantes',
+                'estado' => 'Activo',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]);
+    
+     DB::table('respuestas')->insert([
+                'usuario_id' => 1,
+                'descripcion' => 'Estamos en eso , en ampliar el lugar para tu mejor servicio',
+                'inconformidad_id' => 1,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]); 
-    }
+    
+     DB::table('respuestas')->insert([
+                'usuario_id' => 2,
+                'descripcion' => 'Que bueno',
+                'inconformidad_id' => 1,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]); 
+     
+ }
 }

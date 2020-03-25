@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Seguridad\Usuario;
 use App\Models\Admin\Pqrs;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Respuesta;
 
 class inconformidad extends Model
 {
@@ -23,5 +24,4 @@ class inconformidad extends Model
     {
         return $this->belongsTo(Pqrs::class, 'pqrs_id');
     }
-
 }

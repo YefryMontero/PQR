@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\inconformidad;
 use App\Models\Admin\Pqrs;
+use App\Models\Seguridad\Usuario;
 
 //***Autor:***Yefry Montero**//
 //***Created_At:***22/03/2020***//
@@ -22,8 +23,20 @@ class InconformidadController extends Controller
      */ 
     public function index()
     {
-      $datosInconformidad = inconformidad::with('Usuario', 'Pqrs')->orderBy('created_at')->get();
-      //dd($datosInconformidad);
+        
+        $rol = auth()->user()->roles()->get(); 
+        if($rol[0]['nombre'] == 'Cliente')
+        {
+          $identificacionUsuario = auth()->user()->id;
+      $datosInconformidad = inconformidad::with('Usuario', 'Pqrs')->orderBy('created_at')->where('usuario_id','=',$identificacionUsuario)->get();
+        }
+        
+      else{
+        $datosInconformidad = inconformidad::with('Usuario', 'Pqrs')->orderBy('created_at')->get();
+    }
+
+        
+
        return view('pqrs.inconformidad.index',compact('datosInconformidad'));
     }
 
@@ -47,7 +60,7 @@ class InconformidadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function guardar(Request $respuesta_form)
-    { 
+    {   
         //dd($respuesta_form->motivo);
         $pqrs = Pqrs::findOrFail($respuesta_form->pqrs_id);
         $pqrs->inconfor()->create([
@@ -77,7 +90,8 @@ class InconformidadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datosPqrs = Inconformidad::with('usuario')->findOrFail($id);
+        return view('pqrs.inconformidad.editar', compact('datosPqrs'));
     }
 
     /**
@@ -89,7 +103,7 @@ class InconformidadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

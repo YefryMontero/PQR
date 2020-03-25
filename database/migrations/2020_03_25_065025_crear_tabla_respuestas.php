@@ -17,7 +17,9 @@ class CrearTablaRespuestas extends Migration
             $table->Increments('id');
             $table->unsignedInteger('usuario_id');
             $table->foreign('usuario_id', 'fk_respuesta_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
-            $table->string('descripcion', 150);
+            $table->unsignedInteger('inconformidad_id');
+            $table->foreign('inconformidad_id', 'fk_respuesta_inconformidad')->references('id')->on('inconformidades')->onDelete('restrict')->onUpdate('restrict');
+            $table->string('descripcion', 250);
             $table->timestamps();
         });
     }

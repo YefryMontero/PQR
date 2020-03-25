@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.ver-libro').on('click', function (event) {
+    $('.ver_respuesta').on('click', function (event) {
         event.preventDefault();
         const url = $(this).attr('href');
         const data = {

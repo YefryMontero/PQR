@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Inconformidad;
+use App\Models\Respuesta;
+use App\Models\Seguriad\Usuario;
 
 class RespuestaController extends Controller
 {
@@ -14,8 +17,8 @@ class RespuestaController extends Controller
      */
     public function index()
     {
-        
-        return view('pqrs.respuesta.index');
+      
+       
     }
 
     /**
@@ -25,7 +28,7 @@ class RespuestaController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -34,9 +37,15 @@ class RespuestaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $id)
+    { 
+        $inconformidad = Respuesta::findOrFail($id);
+        $inconformidad->create([
+         'usuario_id' => auth()->user()->id,
+         'inconformidad_id' => $inconformidad->id, 
+         'descripcion' => $request->descripcion
+        ]); 
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +56,12 @@ class RespuestaController extends Controller
      */
     public function show($id)
     {
-        //
+        $rol = auth()->user()->roles()->get()->toArray();
+        $inconformidad = Inconformidad::with('usuario')->findOrFail($id);
+        $respuestas = Respuesta::with('usuario')->where('inconformidad_id','=',$id)->get();
+        //dd($inconformidad);
+        return view('pqrs.respuesta.index', compact('inconformidad','respuestas','rol'));
+        
     }
 
     /**
