@@ -21,10 +21,10 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{route('inicio')}}">Sistema PQR </a>
+            <a href="#">Sistema PQR </a>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg">Inicio su session</p>
+            <p class="login-box-msg">Registrar Cuenta</p>
             @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -35,24 +35,48 @@
                     </div>
                 </div>
             @endif
-            <form action="{{route('login_post')}}" method="POST" autocomplete="off">
+            <form action="{{route('registrar_usuario')}}" method="POST" autocomplete="off">
                 @csrf
                 <div class="form-group has-feedback">
-                    <input type="text" name="usuario" class="form-control" value="{{old('usuario')}}" placeholder="Identificacion">
+                    <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus placeholder="Nombre">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
+
                 <div class="form-group has-feedback">
-                    <input type="password" name="password" class="form-control" placeholder="Contraseña">
+
+                   <input id="identificacion" type="text" class="form-control" name="identificacion" value="{{ old('identificacion') }}" required autocomplete="identificacion" placeholder="Identificacion">
+
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
                 </div>
-                <div class="form-group">
-                    <div class="col-xs-8"></div>
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+
+                <div class="form-group has-feedback" > 
+
+                <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" placeholder="Telefono">
+
                 </div>
-                    
-                <div class="form-group">
+
+                <div class="form-group has-feedback" > 
+
+                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="Correo electronico" placeholder="Correo electronico">
+
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="Contraseña">
+
+                </div>
+
+                <div class="form-group has-feedback"> 
+
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmar Contraseña">
+
+                </div>
+
+                <div class="row">
                     <div class="col-xs-8"></div>
-                        <a href="{{route('register')}}" class="btn btn-info btn-block btn-flat">Crear Cuenta</a>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Crear Cuenta</button>
+                         <a class="btn btn-primary btn-block btn-flat" href="/">Volver</a>
                 </div>
             </form>
         </div>

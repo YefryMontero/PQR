@@ -2,7 +2,13 @@
 
 
 
-Route::get('/', 'InicioController@index')->name('inicio');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('registrousuario', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('registrousuario', 'Admin\UsuarioController@guardar')->name('registrar_usuario');
+Route::get('admin/admin', 'InicioController@index')->name('inicio');
 Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
 Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
 Route::get('seguridad/logout', 'Seguridad\LoginController@logout')->name('logout');
@@ -54,3 +60,4 @@ Route::post('pqrs/inconformidad', 'InconformidadController@guardar')->name('guar
 Route::get('pqrs/{id}/editar', 'InconformidadController@edit')->name('actualizar_inconformidad'); 
 Route::get('pqrs/respuesta/{id}', 'RespuestaController@show')->name('responder_pqrs');
 Route::post('pqrs/respuesta/{id}', 'RespuestaController@store')->name('guardar_respuesta');  
+Route::post('pqrs/inconformidad','InconformidadController@update')->name('Fin_inconformidad');

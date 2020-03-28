@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-    protected $redirectTo = '/';
+    protected $redirectTo = '/pqrs/inconformidad';
     private $maxAttempts = 3;
     private $decayMinutes = 20;
 

@@ -56,11 +56,12 @@ class RespuestaController extends Controller
      */
     public function show($id)
     {
-        $rol = auth()->user()->roles()->get()->toArray();
+        $nombreUsuario = auth()->user()->nombre;
+        //dd($usuario);
         $inconformidad = Inconformidad::with('usuario')->findOrFail($id);
         $respuestas = Respuesta::with('usuario')->where('inconformidad_id','=',$id)->get();
         //dd($inconformidad);
-        return view('pqrs.respuesta.index', compact('inconformidad','respuestas','rol'));
+        return view('pqrs.respuesta.index', compact('inconformidad','respuestas','nombreUsuario'));
         
     }
 

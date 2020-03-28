@@ -10,7 +10,7 @@
 @section('contenido')
 
 <!-- DIRECT CHAT -->
-              <div class="box box-warning direct-chat direct-chat-warning">
+              <div class="box box-warning direct-chat direct-chat-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">{{$inconformidad->motivo}}</h3>
                 </div>
@@ -36,10 +36,11 @@
                     <!-- Message to the right -->
                     @foreach ($respuestas as $respuesta)
                        
-                       @if ($inconformidad->usuario->nombre == $respuesta->usuario->nombre)
-                         @include('pqrs.respuesta.usuarioinconforme')
+                       @if ($nombreUsuario == $respuesta->usuario->nombre)
+                        @include('pqrs.respuesta.respuestabelarcazar')
                                 @else
-                            @include('pqrs.respuesta.respuestabelarcazar')
+                            
+                             @include('pqrs.respuesta.usuarioinconforme')
                     @endif
                     @endforeach
                     
@@ -54,9 +55,16 @@
                        @csrf
                       <input type="text" name="descripcion" id="form-general" placeholder="Escribe Un Mensaje" class="form-control" autocomplete="off">
                       <span class="input-group-btn">
-                            <button type="submit" class="btn btn-warning btn-flat">Enviar</button>
+                             <button type="submit" class="btn btn-primary btn-flat">Enviar</button>
+                          </span>
+                          <span> </span>
+                          <span action="{{route('Fin_inconformidad')}}"  class="input-group-btn">
+                            <a class="btn btn-info btn-flat">Fin Inconformidad</a>
                           </span>
                     </div>
+                    
+                      
+                    
                   </form>
                 </div>
                 <!-- /.box-footer-->
