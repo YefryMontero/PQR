@@ -53,12 +53,12 @@
                   <form action="{{route('guardar_respuesta', $inconformidad)}}" method="post">
                     <div class="input-group">
                        @csrf
-                      <input type="text" name="descripcion" id="form-general" placeholder="Escribe Un Mensaje" class="form-control" autocomplete="off">
+                      <input type="text" name="descripcion" id="descripcion" placeholder="Escribe Un Mensaje" class="form-control" autocomplete="off" required/>
                       <span class="input-group-btn">
                              <button type="submit" class="btn btn-primary btn-flat">Enviar</button>
                           </span>
                           <span> </span>
-                          <span action="{{route('Fin_inconformidad')}}"  class="input-group-btn">
+                          <span action=""  class="input-group-btn">
                             <a class="btn btn-info btn-flat">Fin Inconformidad</a>
                           </span>
                     </div>

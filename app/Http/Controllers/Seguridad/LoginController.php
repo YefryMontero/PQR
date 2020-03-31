@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+//***Autor:***Yefry Montero**//
+//***Created_At:***01/01/2020***//
+//***Update_At:***29/03/2020***//
 
 class LoginController extends Controller
 {
@@ -25,15 +28,14 @@ class LoginController extends Controller
     }
 
     protected function authenticated(Request $request, $user)
-    {
-    
+    {   
         $roles = $user->roles()->get();
         if ($roles->isNotEmpty()) {
             $user->setSession($roles->toArray());
         } else {
             $this->guard()->logout();
             $request->session()->invalidate();
-            return redirect('seguridad/login')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
+            return redirect('welcome')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
         }
     }
     public function username()

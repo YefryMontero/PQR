@@ -7,7 +7,7 @@
                 <option 
                 value="{{$id}}">{{$nombre}}
                 </option>
-            @endforeach
+            @endforeach 
         </select>
     </div>
 </div>
@@ -20,7 +20,7 @@
 <div class="form-group">
         <label for="descripcion" class="col-lg-3 control-label requerido">Descripcion</label>
         <div class="col-lg-8">
-        <input type="text" name="descripcion" id="descripcion" class="form-control" value="{{old('descripcion', $datosPqrs->descripcion ?? '')}}" placeholder="Enter ...">
+        <input type="text" name="descripcion" id="descripcion" class="form-control" value="{{old('descripcion', $datosPqrs->descripcion ?? '')}}" required/ placeholder="Descripcion"> 
         </div>
  </div>
 

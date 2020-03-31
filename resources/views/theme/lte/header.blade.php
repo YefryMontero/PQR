@@ -13,7 +13,6 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="user-image" alt="User Image">
             <span class="hidden-xs">Hola, {{session()->get('nombre_usuario') ?? 'Aun no inicias sesion'}}</span>
           </a>
           <ul class="dropdown-menu">

@@ -19,10 +19,10 @@
                     <a href="{{route('inconformidad')}}" class="btn btn-block btn-info btn-sm">
                         <i class="fa fa-fw fa-reply-all"></i> Volver al listado
                     </a>
-                </div>
-            </div>
+                </div>  
+            </div>  
             <form action="{{route('guardar_inconformidad')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off">
-                @csrf
+                @csrf   
                 <div class="box-body">
                     @include('pqrs.inconformidad.form')
                 </div>

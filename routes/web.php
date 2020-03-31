@@ -50,14 +50,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     /*RUTAS PERMISO_ROL*/
     Route::get('permiso-rol', 'PermisoRolController@index')->name('permiso_rol');
     Route::post('permiso-rol', 'PermisoRolController@guardar')->name('guardar_permiso_rol');
+      /*RUTAS PQRS*/
      Route::get('pqrs', 'PqrsController@index')->name('pqrs');
      Route::get('pqrs/crear', 'PqrsController@crear')->name('crear_pqrs');
      Route::post('pqrs', 'PqrsController@guardar')->name('guardar_pqrs');
 });
+  /*RUTAS INCONFORMIDADES*/
 Route::get('pqrs/inconformidad', 'InconformidadController@index')->name('inconformidad');
 Route::get('pqrs/inconformidad/crear', 'InconformidadController@crear')->name('crear_inconformidad');
+Route::post('pqrs/inconformidad' , 'InconformidadController@guardar')->name('guardar_inconformidad');
 Route::post('pqrs/inconformidad', 'InconformidadController@guardar')->name('guardar_inconformidad');
 Route::get('pqrs/{id}/editar', 'InconformidadController@edit')->name('actualizar_inconformidad'); 
+  /*RUTAS INCONFORMIDADES_RESPUESTAS*/
 Route::get('pqrs/respuesta/{id}', 'RespuestaController@show')->name('responder_pqrs');
 Route::post('pqrs/respuesta/{id}', 'RespuestaController@store')->name('guardar_respuesta');  
-Route::post('pqrs/inconformidad','InconformidadController@update')->name('Fin_inconformidad');

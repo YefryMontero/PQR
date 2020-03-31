@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
+//***Autor:***Laravel**//
+//***Created_At:***01/01/2020***//
+//***Update_At:***15/01/2020***//
+
+
 trait AuthenticatesUsers
 {
     use RedirectsUsers, ThrottlesLogins;

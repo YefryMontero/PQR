@@ -52,7 +52,7 @@
                     
                 <div class="form-group">
                     <div class="col-xs-8"></div>
-                        <a href="{{route('register')}}" class="btn btn-info btn-block btn-flat">Crear Cuenta</a>
+                        <a href="" class="btn btn-info btn-block btn-flat">Crear Cuenta</a>
                 </div>
             </form>
         </div>

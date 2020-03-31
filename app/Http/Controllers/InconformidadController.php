@@ -12,15 +12,13 @@ use App\Models\Seguridad\Usuario;
 
 //***Autor:***Yefry Montero**//
 //***Created_At:***22/03/2020***//
-//***Update_At:***22/03/2020***//
+//***Update_At:***31/03/2020***//
 
 class InconformidadController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */ 
+     * Muestra una lista de las inconformidades 
+     **/ 
     public function index()
     {
         
@@ -40,11 +38,9 @@ class InconformidadController extends Controller
        return view('pqrs.inconformidad.index',compact('datosInconformidad'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     /**
+     * Muestra una formulario para crear una nueva inconformidad 
+     **/ 
     public function crear()
     {    
         $datosPqrs = Pqrs::orderBy('id')->pluck('nombre', 'id')->toArray();
@@ -53,11 +49,7 @@ class InconformidadController extends Controller
     }
 
     /**
-     * Store a newly created resour
-     ce in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Guarda la inconformidad creada en la base de datos.
      */
     public function guardar(Request $respuesta_form)
     {   
@@ -69,51 +61,5 @@ class InconformidadController extends Controller
             'usuario_id' => auth()->user()->id
         ]);
         return redirect('pqrs/inconformidad')->with('mensaje', 'Su inconformidad se a creado con exito');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $datosPqrs = Inconformidad::with('usuario')->findOrFail($id);
-        return view('pqrs.inconformidad.editar', compact('datosPqrs'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request)
-    {
-        dd($request);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

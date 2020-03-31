@@ -13,7 +13,7 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Inconformidades</h3>
-                <a href="{{route('crear_inconformidad')}}" class="btn btn-success btn-sm pull-right">Crear Inconformidad</a>
+                <a href="{{route('crear_inconformidad')}}" class="btn btn-success btn-sm pull-right"> <i class="fa fa-fw fa-plus-circle"></i>Nueva Inconformidad</a>
             </div>
             <div class="box-body table-responsive no-padding">
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
@@ -41,9 +41,7 @@
                                 <td>
                                      <a href="{{route('responder_pqrs', $inconformidad)}}" class="ver_respuesta"  title="Respuesta de esta pqrs">
                                      <i class="fa fa-envelope-o"></i>
-                                    <a href="{{route('actualizar_inconformidad', $inconformidad)}}" class="btn-accion-tabla tooltipsC" title="Editar este registro">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
+                                    
                                 </td>
                             </tr>
                         @endforeach
