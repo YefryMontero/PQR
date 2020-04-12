@@ -21,6 +21,7 @@ class RespuestaController extends Controller
      */
     public function store(Request $request, $id)
     { 
+        
         $Relacioninconfor = Respuesta::findOrFail($id);
         $Relacioninconfor->create([
          'usuario_id' => auth()->user()->id,

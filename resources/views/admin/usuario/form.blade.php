@@ -5,8 +5,8 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="usuario" class="col-lg-3 control-label requerido">Usuario</label>
-    <div class="col-lg-8">
+    <label for="usuario" class="col-lg-3 control-label requerido">Identificacion</label>
+    <div class="col-lg-8">  
         <input type="text" name="usuario" id="usuario" class="form-control" value="{{old('usuario', $data->usuario ?? '')}}" required/>
     </div>
 </div>
